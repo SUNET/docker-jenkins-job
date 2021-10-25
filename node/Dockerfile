@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:current
 MAINTAINER Johan Lundberg <lundberg@sunet.se>
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN /bin/sed -i s/deb.debian.org/ftp.se.debian.org/g /etc/apt/sources.list
@@ -18,7 +18,7 @@ RUN apt-get install -y \
     libcups2 \
     libxss1 \
     libxrandr2 \
-    libgconf2-4\
+    libgconf-2-4\
     libasound2 \
     libatk1.0-0 \
     libgtk-3-0
