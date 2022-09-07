@@ -1,7 +1,6 @@
 FROM node:16
 MAINTAINER Johan Lundberg <lundberg@sunet.se>
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN /bin/sed -i s/deb.debian.org/ftp.se.debian.org/g /etc/apt/sources.list
 RUN apt-get -q update
 RUN apt-get -y upgrade
 RUN apt-get install -y locales git-core wget sloccount default-jdk-headless
