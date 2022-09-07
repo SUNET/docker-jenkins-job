@@ -16,6 +16,3 @@ extra_jobs:
   - name: docker-jenkins-job-xenial
     docker_name: sunet/docker-jenkins-job-xenial
     docker_context_dir: xenial
-  - name: docker-jenkins-job-python3.9
-    docker_name: sunet/docker-jenkins-job-python3.9
-    docker_context_dir: python3.9
