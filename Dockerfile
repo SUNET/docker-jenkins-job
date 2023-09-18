@@ -26,8 +26,8 @@ RUN apt-get install -y \
     libz-dev \
     locales \
     pkgconf \
-    python-dev \
-    python-virtualenv \
+    python2-dev \
+    python3-virtualenv \
     python2.7 \
     python3 \
     python3-dev \
