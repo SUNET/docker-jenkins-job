@@ -27,15 +27,11 @@ clean:
 # There's some directory search magic going on in make,
 # thats why the part up to the first / is left here.
 push_docker.sunet.se/%:
-	@# Mangle the name to enable the odd pattern for job-xenial
-	$(eval image_name=$(subst xenial-job,job-xenial,$(patsubst push_%,%,$@)))
 	docker push $(image_name)
 
 push: $(foreach name,$(NAMES),push_$(name))
 
 docker.sunet.se/%:
-	@# Mangle the name to enable the odd pattern for job-xenial
-	$(eval image_name=$(subst xenial-job,job-xenial,$@))
 	@# first, remove any :version from the name,
 	@# and then we can match out the "job-name"
 	@# so we can use that to figure out which context directory to use
@@ -50,4 +46,4 @@ update_extra_jobs: build_extra_jobs
 push_extra_jobs: $(foreach extra_job,$(EXTRA_JOBS),push_docker.sunet.se/sunet/docker-jenkins-$(extra_job)-job\:$(VERSION))
 
 clean_extra_jobs:
-	docker rmi $(subst xenial-job,job-xenial,$(foreach extra_job,$(EXTRA_JOBS),docker.sunet.se/sunet/docker-jenkins-$(extra_job)-job\:$(VERSION)))
+	docker rmi $(foreach extra_job,$(EXTRA_JOBS),docker.sunet.se/sunet/docker-jenkins-$(extra_job)-job\:$(VERSION))
