@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 MAINTAINER Leif Johansson <leifj@mnt.se>
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN /bin/sed -i s/archive.ubuntu.com/se.archive.ubuntu.com/g /etc/apt/sources.list
@@ -26,8 +26,8 @@ RUN apt-get install -y \
     libz-dev \
     locales \
     pkgconf \
-    python-dev \
-    python-virtualenv \
+    python2-dev \
+    python3-virtualenv \
     python2.7 \
     python3 \
     python3-dev \
