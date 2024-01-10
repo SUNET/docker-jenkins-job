@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 MAINTAINER Johan Lundberg <lundberg@sunet.se>
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get -q update
