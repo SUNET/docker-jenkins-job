@@ -41,6 +41,14 @@ RUN apt-get install -y \
     python3.9 \
     python3.9-dev \
     python3.9-venv \
+    python3.10-dev \
+    python3.10-venv \
+    python3.11-dev \
+    python3.11-venv \
+    python3.12-dev \
+    python3.12-venv \
+    python3.13-dev \
+    python3.13-venv \
     sloccount \
     swig \
     wget \
